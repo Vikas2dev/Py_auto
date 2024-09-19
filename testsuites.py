@@ -1,29 +1,27 @@
-# test_list.py
+"""
+This file contains all register contents for test cases
+"""
 
-# Define test cases with their names, purposes, and steps
-test_cases = {
-    'test_case_1': {
-        'purpose': 'Verifying feature A functionality',
-        'steps': [
-            'Step 1: Initialize feature A',
-            'Step 2: Perform action X on feature A',
-            'Step 3: Verify expected behavior of feature A'
-        ]
-    },
-    'test_case_2': {
-        'purpose': 'Verifying feature B functionality',
-        'steps': [
-            'Step 1: Initialize feature B',
-            'Step 2: Perform action Y on feature B',
-            'Step 3: Verify expected behavior of feature B'
-        ]
-    },
-    'test_case_3': {
-        'purpose': 'Verifying feature C functionality',
-        'steps': [
-            'Step 1: Initialize feature C',
-            'Step 2: Perform action Z on feature C',
-            'Step 3: Verify expected behavior of feature C'
-        ]
+# Test file and test class names
+testFile = 'testfile'
+testClass = 'MyTestSuite'
+
+# List of test cases to be run
+testCases = ["test_case"]
+
+# Detailed information for each test case
+testCases_details = {
+    "test_case": {
+        'tcScript': 'test_case',
+        'testCaseName': 'Select Channel',
+        'tcPurpose': 'To test the channel selection functionality',
+        'tcDescription': "This test case verifies that the channel can be selected properly.",
+        'test_data': {
+            'config': {
+                "url": 'http://example.com',
+                "Username": "testuser",
+                "password": "testpassword" 
+            },
+        }
     }
 }

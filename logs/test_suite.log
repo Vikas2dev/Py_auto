@@ -1,0 +1,5 @@
+2024-09-20 02:30:58,287 - INFO - Adding test case 'test_case' - Name: Select Channel
+2024-09-20 02:30:58,287 - INFO - Purpose: To test the channel selection functionality
+2024-09-20 02:30:58,287 - INFO - Description: This test case verifies that the channel can be selected properly.
+2024-09-20 02:34:22,759 - INFO - Adding test case '{test_case_name}' - Name: {details.get('testCaseName', 'Unnamed')}
+2024-09-20 02:37:01,953 - INFO - Adding test case '{test_case_name}' - Name: {details.get('testCaseName', 'Unnamed')}

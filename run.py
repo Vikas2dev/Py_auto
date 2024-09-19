@@ -1,40 +1,31 @@
-# run_tests.py
 import unittest
 import os
-from testfile import MyTestSuite
-from testsuites import test_cases  
-import unittest
-import logging
-import unittest
 import logging
 import time
-import logging
-import time
-import unittest
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+log_file_path = os.path.join('logs', 'test_suite.log')
 if not os.path.exists('logs'):
     os.makedirs('logs')
 
-# Configure logging to file
-log_file_path = os.path.join('logs', 'test_suite.log')
 logging.basicConfig(filename=log_file_path,
                     level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
-def run_tests_with_details(test_cases):
+
+def run_tests_with_details():
     """
     Runs the provided test cases with detailed logging of names, purposes, and steps.
     """
     suite = unittest.TestSuite()
-
-    for test_name, test_details in test_cases.items():
-        logging.info(f"Adding {test_name} - Purpose: {test_details['purpose']}")
-        time.sleep(1)  # Delay before the next log
-        logging.info(f"Steps: {', '.join(test_details['steps'])}")
-        time.sleep(1)  # Delay before adding the test to the suite
-        suite.addTest(MyTestSuite(test_name))
-
+    loader = unittest.TestLoader()
+    # Log test case details
+    logging.info("Adding test case - Name: {details.get('testCaseName', 'Unnamed')}")
+    time.sleep(1)  # Delay before the next log
+    testFile = 'testfile'
+    testClass = 'MyTestSuite'
+    # Load the test case from the specified test file and classtes
+    suite.addTests(loader.loadTestsFromTestCase(getattr(__import__(testFile), testClass)))
+    
     logging.info("Starting the test suite with selected test cases")
     runner = unittest.TextTestRunner()
     result = runner.run(suite)
@@ -46,4 +37,4 @@ def run_tests_with_details(test_cases):
     logging.info("Test suite completed.")
 
 if __name__ == "__main__":
-    run_tests_with_details(test_cases)
+    run_tests_with_details()
